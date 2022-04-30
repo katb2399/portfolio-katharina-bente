@@ -1,0 +1,550 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Gilt für den gesamten sichtbaren Bereich auf der Webseite */
+body {
+  background-color: #F1E0D7;
+  margin : 0;
+  padding : 0;
+  font-family : Avenir;
+  scroll-behavior : smooth;
+}
+
+/*  Gilt für den Headerbereich */
+header {
+  font-size : 15pt;
+  padding : 1px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Die Navigation */
+#menu {
+  position : fixed;
+  top : 0;
+  right : -1em;
+  left : 0;
+  padding : 28px;
+  background : #F1E0D7;
+  height : 1em;
+  z-index : 1;
+}
+
+/*  Ungeordnete Liste in der Navigation */
+#menu > ul {
+  list-style : none;
+  margin : 0;
+  margin-top : -1em;
+  padding : 0;
+  display : flex;
+  flex-direction : row;
+  text-align : center;
+}
+
+/* Jeder Listeneintrag bzw. Navigationspunkt in der Navigation */
+#menu li {
+  margin : 0;
+  padding : 0;
+  font-size : 15pt;
+  flex : 1 1 0%;
+}
+
+/* Das Logo, welches in der Navigation ganz links zu sehen ist */
+#logo-kb {
+  float : left;
+}
+
+/* Jede Hyperlink Verlinkung in der Navigation */
+#menu a {
+  overflow : hidden;
+  display : block;
+  padding : 0.4em;
+  color : #707070;
+  text-decoration : none;
+  text-transform : uppercase;
+  font-weight : bold;
+  transition : transform 0.2s ease;
+}
+
+/*  Aktive Navigationsklasse soll anders aussehen, um erkennbar zu sein (active aus dem Java Script) */
+li.active {
+  text-decoration : underline;
+}
+
+/*  Hover-Effekt für jeden Hyperlink */
+a:hover {
+  color : #FFAB9C;
+  transition : 0.5s;
+  text-shadow : 0 0 5px black;
+}
+
+/* Die Subnavigation von der Hauptnavigation */
+#menu .subnav {
+  visibility : hidden;
+  height : 0;
+  z-index : 1000;
+  background-color : #F1E0D7;
+  box-shadow : 2.4px 2.4px 3.2px rgb(0, 0, 0, 0.15);
+  transition : height 200ms ease-in;
+}
+
+/* Darstellung der Navigationspunkte in der Subnavigation */
+#menu .subnav li {
+  display : block;
+}
+
+/* Hyperlinks in der Subnavigation */
+#menu .subnav a {
+  margin : 0;
+  padding : 8px 12px;
+  text-align : left;
+}
+
+/*  Wenn über die Navigationspunkte der Hauptnavigation gehovert wird, wird die Subnavigation, wenn vorhanden, vom Naviagtionspunkt sichtbar */
+#menu li:hover .subnav {
+  visibility : visible;
+  height : auto;
+  font-weight : bold;
+  text-transform : uppercase;
+  text-decoration : none;
+}
+
+/* Hover Effekt für die Subnavigation  */
+#menu a:hover, .menu.on a {
+  color : #FFAB9C;
+  transition : 0.5s;
+  text-shadow : 0 0 5px black;
+}
+
+/* Navigationspunkt Sprache ändern */
+#lang {
+  list-style : none;
+}
+
+/* CSS für den fixierten Header (sticky aus dem Java Scipt)  */
+.sticky {
+  position : fixed;
+  top : 0;
+  width : 100%;
+}
+
+/*  das Headerbild */
+#part_1 {
+  background-image : url("Bilder/header_webseite.jpg");
+  background-repeat : no-repeat;
+  background-size : 1400px 787px;
+  background-position : center;
+  margin-top: 6em;
+  margin-bottom: 6em;
+}
+
+/* Positionierung des ,,Moin" in der Mitte vom Header */
+svg {
+  font : 110pt 'Montserrat';
+  width : 800px;
+  height : 300px;
+  margin : 0 auto;
+  margin-top: 0.75em;
+}
+
+/* Größe und Farbgestaltung vom ,,Moin" */
+.text-copy {
+  fill : none;
+  stroke : white;
+  stroke-dasharray : 6% 29%;
+  stroke-width : 3px;
+  stroke-dashoffset : 0%;
+  animation : stroke-offset 5.5s linear infinite;
+}
+
+/* Jeder Strich kriegt eine Farbe, das orange-gelb und der Korallton sollen abwechselnd sein */
+.text-copy:nth-child(1) {
+  stroke : #FFAB9C;
+}
+
+.text-copy:nth-child(2) {
+  stroke : #ffcf94;
+  animation-delay : -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke : #FFAB9C;
+  animation-delay : -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke : #ffcf94;
+  animation-delay : -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke : #FFAB9C;
+  animation-delay : -5s;
+}
+
+.text-copy:nth-child(6) {
+  stroke : #ffcf94;
+  animation-delay : -6s;
+  }
+
+/*  Wichtig für den Pfeil */
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset : -35%;
+  }
+}
+
+/* Die div Klasse außerhalb vom Pfeil  */
+.div-arrow {
+  position : absolute;
+  top : 90%;
+  left : 48%;
+  padding-top: 60px;
+  /* cubic-bezier-easing = sine / mehr Beispiele: https://easings.net/ */
+  animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  cursor: pointer;
+  height: 30px;
+  width: 35px;
+}
+
+.arrow {
+  height: 6px;
+  background: white;
+  transform: rotate(45deg);
+  transform-origin: 0% 0%;
+  border-radius: 5px;
+  box-shadow : 0 3px 5px rgb(0, 0, 0, 0.2);
+}
+.arrow:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 100%;
+  border-radius: 5px;
+  background: white;
+  transform: rotate(-90deg);
+  transform-origin: 0% 100%;
+  box-shadow : 0 3px 5px rgb(0, 0, 0, 0.2);
+}
+
+@keyframes bounce {
+50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Hauptinhalt der Webseite  */
+main {
+  top : auto;
+  overflow : hidden;
+  display : block;
+  color : black;
+  margin-left: 1em;
+  
+}
+
+/* Allgemeine Werte, die für jede Sektion gelten  */
+section {
+  padding : 1em 1em 1em;
+  padding-top: 70px;
+  width : 100%;
+  text-align : left;
+  display : flex;
+  font-family : Avenir;
+  font-size : 12pt;
+}
+
+/* Gestaltung der ,,Über Mich" Sektion  */
+#part_2 {
+  background-image : url("Bilder/background-section-11.jpg");
+  background-repeat : no-repeat;
+  background-size : 1120px 1920px;
+  background-position : left;
+}
+
+/* Gestaltung der Überschrift H2 */
+h2 {
+  position : static;
+  font-family : mono45-headline, monospace;
+  font-weight : 500;
+  font-style : normal;
+  font-size : 30pt;
+  color : #707070;
+}
+
+/* Hyperlinkgestaltung, damit sie nicht als solche sichtbar sind*/
+a {
+  color :#ffcf94;
+  text-decoration : none;
+  }
+
+/*  Gestaltung der Überschrift H3 */
+h3 {
+  font-family : lust-didone, serif;
+  font-weight : 700;
+  font-style : normal;
+  font-size : 20pt;
+  color : #707070;
+  text-shadow : 3px 2px #F1E0D7;
+  text-align : center;
+  border : 0;
+  padding : 0;
+}
+
+#projects {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Die Boxen, in denen die Inhalte jeder einzelnen Projektarbeit sind  */
+.box {
+  border : #ffcf94 solid 2px;
+  background-color : #ffcf94;
+  margin : 3em;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 5vw);
+  grid-gap: 30px;
+  margin: 2em;
+}
+
+
+.gallery__img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery__img:hover {
+  border: 2px solid white;
+  cursor : pointer;
+}
+
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.gallery__item--2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.gallery__item--3 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.gallery__item--4 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.gallery__item--5 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.gallery__item--6 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+/* Gestaltung der einzelnen Boxen für die Buttons ,,HTML", ,,CSS" und ,,Java Script"*/
+#icons, #lyrics, #billboard, #switch, #bp, #web {
+  position : relative;
+  left : 3em;;
+  text-align : center;
+  border : 0;
+  background : #707070;
+  opacity: 0.3;
+  width : 6em;
+  height : 6em;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  margin : 1em;
+  transition : 1s ease;
+  font-family : mono45-headline, monospace;
+  font-weight : 400;
+  font-style : normal;
+  font-size : 25pt;
+  color : #ffcf94;
+  box-shadow : 0 7px 29px 0 #FFAB9C;
+}
+
+/* Hover Effekt für die Buttons, sollen als solche erkennabr sein, da sich der Cursor verändert  */
+#icons:hover, #lyrics:hover, #billboard:hover, #switch:hover, #bp:hover, #web:hover {
+  transform : scale(1.2);
+  transition : 1s ease;
+  cursor : pointer;
+}
+
+/*  Außenabstand für Paragraphe/Absätze */
+p {
+  margin : 1em;
+}
+
+.left-figure {
+  float: left;
+  margin-left: 20px;
+}
+
+.right-figure {
+  float: right;
+  margin-right: 20px;
+}
+
+#wireframe, #buchstabenplakat, #lyrics, #switch, #billboard, #icons {
+  cursor: pointer;
+}
+
+/* Jedes Bild innerhalb der Boxen sollen einen Außenabstand nach links und rechts haben  */
+#note, #wireframe-pic, #dashboard-entwurf, #dashboard-beispiel, #dashboard-web, #switch-mainMenu, #switch-gameOver, #switch-levels, #switch-winScreen, #paper-pro, #app-start, #app-haupt, #app-auswahl, #app-einkauf, #app-such {
+  margin-right : 0.5em;
+  margin-left : 0.5em;
+}
+
+#switch-pictures {
+  display: flex;
+  justify-content: center;
+}
+
+#app-pictures {
+  display: flex;
+  justify-content: center;
+}
+
+i {
+  text-align: center;
+  font-size: 10pt;
+  margin-left: 20em;
+}
+
+/* Außenabstand für die Überschrift H5  */
+h5 {
+  margin : 1em;
+  font-size : 13pt;
+  font-weight: bold;
+}
+
+b {
+  font-size: 13pt;
+}
+
+/* Außenabstand nach unten bei der Sektion ,,Kontakt" */
+#part_5 {
+  margin-bottom : 25em;
+}
+
+/*  Gestaltung der Überschrift H4 */
+h4 {
+  position : relative;
+  top : 120px;
+  font-family : mono45-headline, monospace;
+  font-weight : 500;
+  font-style : normal;
+  font-size : 20pt;
+  color : #707070;
+}
+
+/*  Position der Pinnadel für den Standort */
+#location-pic {
+  position : relative;
+  top : 100px;
+  left : -20px;
+}
+
+/*  der iframe oder die Google Maps Verlinkung */
+iframe {
+  position : relative;
+  top : 180px;
+  left : -262px;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+/* Div Container für das E-Mail Fenster  */
+#email {
+  position : relative;
+  top : 180px;
+  width: 30em;
+  background-color : #FFAB9C;
+  overflow : hidden;
+  justify-content : center;
+  align-items: center;
+  border : #FFAB9C solid 10px;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+/* Das Briefbild über der E-Mail Adresse */
+#email-pic {
+  position : absolute;
+  top : -9999px;
+  bottom : -9900px;
+  left : -9999px;
+  right : -9999px;
+  margin : auto;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+/*  Die E-Mail Adresse */
+#email-address {
+  position : relative;
+  top : 150px;
+  left: 90px;
+  font-family : mono45-headline, monospace;
+  font-weight : 500;
+  font-style : normal;
+  font-size : 20pt;
+  color : #707070;
+  text-decoration : none;
+}
+
+/*  Hover Effekt bei der E-Mail Adresse */
+#email-address:hover {
+  color : #FFAB9C;
+  transition : 0.5s;
+  text-shadow : 0 0 5px black;
+}
+
+/* Der Footer  */
+footer {
+  text-align : center;
+  background-color : #ffcf94;
+  padding : 18px;
+  margin : 0;
+  color : #707070;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+/*  Die Verlinkung der ,,Rechtliches" Seite  */
+#rechtliches {
+  color : #707070;
+}
+
+/* Hovereffekt */
+#rechtliches:hover {
+  color : #FFAB9C;
+  transition : 0.5s;
+  text-shadow : 0 0 5px black;
+}

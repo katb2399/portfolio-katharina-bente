@@ -1,0 +1,321 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Gilt für den gesamten sichtbaren Bereich auf der Webseite */
+body {
+  background-color: #F1E0D7;
+  margin : 0;
+  padding : 0;
+  font-family : Avenir;
+  scroll-behavior : smooth;
+}
+
+/*  Gilt für den Headerbereich */
+header {
+  font-size : 15pt;
+  padding : 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Die Navigation */
+#menu {
+  position : fixed;
+  top : 0;
+  right : -1em;
+  left : 0;
+  padding : 30px;
+  background : #F1E0D7;
+  height : 1em;
+  z-index : 1;
+}
+
+/*  Ungeordnete Liste in der Navigation */
+#menu > ul {
+  list-style : none;
+  margin : 0;
+  margin-top : -1em;
+  padding : 0;
+  display : flex;
+  flex-direction : row;
+  text-align : center;
+}
+
+/* Jeder Listeneintrag bzw. Navigationspunkt in der Navigation */
+#menu li {
+  margin : 0;
+  padding : 0;
+  font-size : 15pt;
+  flex : 1 1 0%;
+}
+
+/* Das Logo, welches in der Navigation ganz links zu sehen ist */
+#logo-kb {
+  float : left;
+}
+
+/* Jede Hyperlink Verlinkung in der Navigation */
+#menu a {
+  overflow : hidden;
+  display : block;
+  padding : 0.4em;
+  color : #707070;
+  text-decoration : none;
+  text-transform : uppercase;
+  font-weight : bold;
+  transition : transform 0.2s ease;
+}
+
+/*  Aktive Navigationsklasse soll anders aussehen, um erkennbar zu sein (active aus dem Java Script) */
+li.active {
+  text-decoration : underline;
+}
+
+/*  Hover-Effekt für jeden Hyperlink */
+a:hover {
+  color : #FFAB9C;
+  transition : 0.5s;
+  text-shadow : 0 0 5px black;
+}
+
+/* Die Subnavigation von der Hauptnavigation */
+#menu .subnav {
+  visibility : hidden;
+  height : 0;
+  z-index : 1000;
+  background-color : #F1E0D7;
+  box-shadow : 2.4px 2.4px 3.2px rgb(0, 0, 0, 0.15);
+  transition : height 200ms ease-in;
+}
+
+/* Darstellung der Navigationspunkte in der Subnavigation */
+#menu .subnav li {
+  display : block;
+}
+
+/* Hyperlinks in der Subnavigation */
+#menu .subnav a {
+  margin : 0;
+  padding : 8px 12px;
+  text-align : left;
+}
+
+/*  Wenn über die Navigationspunkte der Hauptnavigation gehovert wird, wird die Subnavigation, wenn vorhanden, vom Naviagtionspunkt sichtbar */
+#menu li:hover .subnav {
+  visibility : visible;
+  height : auto;
+  font-weight : bold;
+  text-transform : uppercase;
+  text-decoration : none;
+}
+
+/* Hover Effekt für die Subnavigation  */
+#menu a:hover, .menu.on a {
+  color : #FFAB9C;
+  transition : 0.5s;
+  text-shadow : 0 0 5px black;
+}
+
+#lang {
+  list-style : none;
+}
+
+/* CSS für den fixierten Header (sticky aus dem Java Scipt)  */
+.sticky {
+  position : fixed;
+  top : 0;
+  width : 100%;
+}
+
+/* Hauptinhalt der Webseite  */
+main {
+  top : auto;
+  overflow : hidden;
+  display : block;
+  color : black;
+  margin-left: 1em;
+  margin-top: 6em;
+}
+
+/* Allgemeine Werte, die für jede Sektion gelten  */
+section {
+  padding : 1em 1em 1em;
+  padding-top: 70px;
+  width : 100%;
+  text-align : left;
+  display : flex;
+  font-family : Avenir;
+  font-size : 12pt;
+}
+
+/* Gestaltung der Überschrift H2 */
+h2 {
+  position : static;
+  font-family : mono45-headline, monospace;
+  font-weight : 500;
+  font-style : normal;
+  font-size : 30pt;
+  color : #707070;
+}
+
+/* Hyperlinkgestaltung, damit sie nicht als solche sichtbar sind*/
+a {
+  color : black;
+  text-decoration : none;
+  }
+
+/*  Gestaltung der Überschrift H3 */
+h3 {
+  font-family : lust-didone, serif;
+  font-weight : 700;
+  font-style : normal;
+  font-size : 20pt;
+  color : #707070;
+  text-shadow : 3px 2px #F1E0D7;
+  text-align : center;
+  border : 0;
+  padding : 0;
+}
+
+/*  Außenabstand für Paragraphe/Absätze */
+p {
+  margin : 1em;
+}
+
+figure {
+    padding: 4px;
+    margin: auto;
+  }
+
+figcaption {
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+
+/* Jedes Bild innerhalb der Boxen sollen einen Außenabstand nach links und rechts haben  */
+#note, #wireframe-pic, #bk, #butterfly, #letterbox_k, #butterfly_k, #switch-mainMenu, #switch-gameOver, #switch-levels, #switch-winScreen, 
+#switch-logo, #icon_distance, #icon_hands, #icon_mask, #home_pink, #home_beige, #home_black, song_truce, #song_natural, #song_lightsup, 
+#song_nasa, #song_flicker, #cookie_p, #cookie_b {
+  margin-right : 0.5em;
+  margin-left : 0.5em;
+}
+
+#bp_kontrast, #switch-pictures, #icons-covid, #home-screens, #lyrics {
+  display: flex;
+  justify-content: center;
+}
+
+#app-pictures {
+  display: flex;
+  justify-content: center;
+}
+
+i {
+  text-align: center;
+  font-size: 10pt;
+  margin-left: 20em;
+}
+
+/* Außenabstand für die Überschrift H5  */
+h5 {
+  margin : 1em;
+  font-size : 13pt;
+  font-weight: bold;
+}
+
+b {
+  font-size: 13pt;
+}
+
+/*  Gestaltung der Überschrift H4 */
+h4 {
+  position : relative;
+  top : 120px;
+  font-family : mono45-headline, monospace;
+  font-weight : 500;
+  font-style : normal;
+  font-size : 20pt;
+  color : #707070;
+}
+
+/*  Position der Pinnadel für den Standort */
+#location-pic {
+  position : relative;
+  top : 100px;
+  left : -20px;
+}
+
+/*  der iframe oder die Google Maps Verlinkung */
+iframe {
+  position : relative;
+  top : 180px;
+  left : -262px;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+/* Div Container für das E-Mail Fenster  */
+#email {
+  position : relative;
+  top : 180px;
+  width: 30em;
+  background-color : #FFAB9C;
+  overflow : hidden;
+  justify-content : center;
+  align-items: center;
+  border : #FFAB9C solid 10px;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+/* Das Briefbild über der E-Mail Adresse */
+#email-pic {
+  position : absolute;
+  top : -9999px;
+  bottom : -9900px;
+  left : -9999px;
+  right : -9999px;
+  margin : auto;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+/*  Die E-Mail Adresse */
+#email-address {
+  position : relative;
+  top : 150px;
+  left: 90px;
+  font-family : mono45-headline, monospace;
+  font-weight : 500;
+  font-style : normal;
+  font-size : 20pt;
+  color : #707070;
+  text-decoration : none;
+}
+
+/*  Hover Effekt bei der E-Mail Adresse */
+#email-address:hover {
+  color : #FFAB9C;
+  transition : 0.5s;
+  text-shadow : 0 0 5px black;
+}
+
+/* Der Footer  */
+footer {
+  text-align : center;
+  background-color : #ffcf94;
+  padding : 18px;
+  margin : 0;
+  color : #707070;
+  box-shadow : 0 7px 29px 0 rgb(0, 0, 0, 0.3);
+}
+
+/*  Die Verlinkung der ,,Rechtliches" Seite  */
+#rechtliches {
+  color : #707070;
+}
+
+/* Hovereffekt */
+#rechtliches:hover {
+  color : #FFAB9C;
+  transition : 0.5s;
+  text-shadow : 0 0 5px black;
+}

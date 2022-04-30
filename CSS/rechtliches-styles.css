@@ -1,0 +1,190 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Gilt für den gesamten Seiteninhalt */
+body {
+    background: #F1E0D7;
+    margin: 0;
+    padding: 0;
+    font-family: Avenir;
+    scroll-behavior: smooth;
+}
+/* Header Ausrichtung */
+header {
+    padding: 10px;
+}
+
+/* Die gesamte Navigation  */
+#menu {
+    position: fixed;
+    top: 0;
+    right: -1em;
+    left: 0px;
+    padding: 20px;
+    background: #F1E0D7;
+    height: 1em;
+    z-index: 1;
+}
+
+/* Die Liste innerhalb der Navigation  */
+#menu > ul {
+    list-style: none;
+    margin-top: -0.5em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+      
+}
+
+/* Jeder Naviagtionspunkt innerhalb der Navigation  */
+#menu li {
+    margin: 0;
+    padding: 0;
+    font-size: 15pt;
+    flex: 1 1 0%;
+    color: #707070;
+}
+
+/*  Das Logo links in der Navigations */
+#logo-kb {
+    float: left;
+}
+
+/* Text ,,zur Hauptseite zurück" */
+#back-to-index {
+    position: absolute;
+    left: 53%;
+    top: 1em;
+}
+
+/*  Wichtig für den Pfeil */
+@keyframes stroke-offset{
+	100% {
+        stroke-dashoffset: -35%;
+    }
+}
+
+/* Div außerhalb des Pfeiles, Positionierung und Größe wird festgelegt  */
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/*  Der Pfeil, welcher zur Hauptseite zurückführt */
+.arrow {
+    position: absolute;
+    top: 1em;
+    width: 90%;
+    height: 7px;
+    transform: rotate(-180deg);
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    animation: arrow 700ms linear infinite;
+}
+  
+.arrow::after, .arrow::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 8px;
+    right: -8px;
+    background-color: #fff;
+}
+
+/*  Positionierung der rechten und linken ,,Pfeilarme" */
+.arrow::after {
+    top: -5px;
+    transform: rotate(45deg);
+}
+  
+/*  Positionierung der rechten und linken ,,Pfeilarme" */
+.arrow::before {
+    top: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    transform: rotate(-45deg);
+}
+
+/* Start des Hauptinhaltes auf der Seite */
+main {
+    margin-top: 2em;
+    top: auto;
+    overflow: hidden;
+    display: block;
+    color: black;
+}
+
+/* Gestaltung der Überschrift H2 */
+h2 {
+    position: static;
+    font-family: mono45-headline, monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30pt;
+    color: #707070;
+    text-align:left;
+}
+
+h3 {
+    font-family : mono45-headline, monospace;
+    font-weight : 500;
+    font-style : normal;
+    font-size : 25pt;
+    color : #707070;
+    text-shadow : 3px 2px #F1E0D7;
+    text-align : left;
+    border : 0;
+    padding : 0;
+  }
+
+h4 {
+    font-family : mono45-headline, monospace;
+    font-weight : 500;
+    font-style : normal;
+    font-size : 20pt;
+    text-align : left;
+    color : #707070;
+  }
+
+/*  Ausrichtung der Paragraphen/Absätze */
+p {
+    text-align: left;
+}
+
+/*  Gestaltung jeglicher Hyperlinks */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*  Hovereffekt für die Hyperlinks */
+a:hover {
+    color: #FFAB9C;
+  transition: 0.5s;
+  text-shadow: 0 0 5px black;
+}
+
+/* Gestaltung des Footers */
+footer {
+    text-align: center;
+    background-color: #ffcf94;
+    padding: 10px;
+    margin: 0;
+    color: #707070;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
+}
+
+/*  Die Verlinkung der ,,Rechtliches" Seite  */
+#rechtliches {
+    color : #707070;
+}
+  
+/* Hovereffekt */
+#rechtliches:hover {
+    color : #FFAB9C;
+    transition : 0.5s;
+    text-shadow : 0 0 5px black;
+}
